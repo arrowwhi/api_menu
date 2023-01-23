@@ -20,3 +20,15 @@ DB settigs based on `settings.env`. Default values:
     port: '5433',
     username: 'postgres',
     password: ''
+
+
+#### Launch with Docker
+
+###### To run project on Docker container:
+ - go to `Docker` directory
+ - tace command `docker-compose up --build`
+
+###### To run tests:
+ - go to 'Docker/tests' directory
+ - build Docker container using `docker build .` command
+ - run Docker container using `docker run <container_id>` command
