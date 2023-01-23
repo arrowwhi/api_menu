@@ -1,0 +1,38 @@
+version: "3"
+
+# volumes:
+#   postgres:
+#     driver: local
+#     name: postgres
+#     driver_opts:
+#       type: none
+#       o: bind
+#       device: /Users/ivan/Projects/
+
+services:
+  postgres_db:
+    container_name: postgres_db
+    image: postgres:15.1-alpine
+    environment:
+      - POSTGRES_USER=postgress
+      - POSTGRES_PASSWORD=123
+    networks:
+      - network-app
+    restart: always
+    ports:
+      - "5432:5432"
+
+  app:
+    depends_on:
+      - postgres_db
+    container_name: my-app
+    build: ./menu_api/
+    restart: always
+    networks:
+      - network-app
+    ports:
+      - "5001:5001"
+
+networks:
+    network-app:
+      driver: bridge
