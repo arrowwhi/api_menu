@@ -31,7 +31,7 @@ services:
     networks:
       - network-app
     ports:
-      - "5001:5001"
+      - "5011:5011"
 
 networks:
     network-app:
