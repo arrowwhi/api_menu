@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  manu_api_test:
+    container_name: manu_api_test
+    build: ./tests
+    restart: always
+    ports:
+      - "9876:9000"

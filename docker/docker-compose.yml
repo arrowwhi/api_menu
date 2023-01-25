@@ -1,13 +1,4 @@
-version: "3"
-
-# volumes:
-#   postgres:
-#     driver: local
-#     name: postgres
-#     driver_opts:
-#       type: none
-#       o: bind
-#       device: /Users/ivan/Projects/
+version: "3.8"
 
 services:
   postgres_db:
@@ -32,6 +23,12 @@ services:
       - network-app
     ports:
       - "5011:5011"
+    healthcheck:
+      test: curl --fail http://0.0.0.0:5432 || exit 1
+      interval: 10s
+      timeout: 10s
+      start_period: 10s
+      retries: 3
 
 networks:
     network-app:

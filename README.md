@@ -26,9 +26,8 @@ DB settigs based on `settings.env`. Default values:
 
 ###### To run project on Docker container:
  - go to `Docker` directory
- - tace command `docker-compose up --build`
+ - take command `make docker_menu_api`
 
 ###### To run tests:
- - go to 'Docker/tests' directory
- - build Docker container using `docker build .` command
- - run Docker container using `docker run <container_id>` command
+ - go to `Docker` directory
+ - take command `docker-tests`
